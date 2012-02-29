@@ -37,12 +37,16 @@
     background: #000;
     border-radius: 16px;
     border: 3px solid #fff;
-    opacity: 0.7;
+    opacity: 0;
     color: #fff;
     line-height: 19px;
     text-align: center;
     font-size: 30px;
     font-weight: normal;
+}
+.jcarousel-skin-plain:hover .jcarousel-prev-horizontal,
+.jcarousel-skin-plain:hover .jcarousel-next-horizontal {
+  opacity: 0.7;
 }
 .jcarousel-skin-plain .jcarousel-next-horizontal {
     right: 8px;
