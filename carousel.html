@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+	<meta name="if:Show notes" content="1">
+	<meta name="text:Disqus Shortname" content="" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://code/yoga/tumblr/bootstrap.js"></script>
+  <script type="text/javascript" src="http://code/yoga/tumblr/bootstrap-carousel.js"></script>
+		
+	<link rel="stylesheet" href="http://code/yoga/tumblr/bootstrap.css">
+	<link rel="stylesheet" href="http://code/yoga/tumblr/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Marck+Script|Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="jquery.jcarousel.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://code/yoga/tumblr/tango/skin.css" />
+</head>
+<body>
+  <!--
+    <img src="slideshow/1s.jpg"/>
+    <img src="slideshow/2s.jpg"/>
+    <img src="slideshow/3s.jpg"/>
+    <img src="slideshow/4s.jpg"/>
+    <img src="slideshow/5s.jpg"/>
+    <img src="slideshow/6s.jpg"/>
+    <img src="slideshow/7s.jpg"/>
+    <img src="slideshow/8s.jpg"/>
+    <img src="slideshow/9s.jpg"/>
+    <img src="slideshow/10s.jpg"/>
+    <img src="slideshow/11s.jpg"/>
+  -->
+
+  <hr/>
+
+  <div style="border:1px solid #f0f; margin: 100px auto; width: 380px;">
+    <ul id="mycarousel" class="jcarousel-skin-tango">
+      <li><img src="slideshow/1s.jpg"/></li>
+      <li><img src="slideshow/2s.jpg"/></li>
+      <li><img src="slideshow/3s.jpg"/></li>
+      <li><img src="slideshow/4s.jpg"/></li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+    $(function() {
+        $('#mycarousel').jcarousel({
+scroll: 1,
+wrap: 'circular',
+auto: 4
+          });
+    });
+  </script>
+</body>
+</html>

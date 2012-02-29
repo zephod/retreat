@@ -1,0 +1,121 @@
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+h1,h2,h3,h4,h5,h6,.nav {
+  font-family: 'Nothing You Could Do';
+}
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
+  text-decoration: none;
+  color: #000;
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #08C;
+	text-decoration: none;
+}
+
+/* ====== */
+/* Header */
+/* ====== */
+#header {
+  text-align: right;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+#header h1 {
+  font-weight: bold;
+  font-size: 35px;
+  margin-bottom: 0;
+}
+#header h2 {
+  margin-bottom: 0;
+  font-size: 20px;
+  line-height: 22px;
+}
+#subheader {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+
+/* ========== */
+/* Background */
+/* ========== */
+#background {
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:-1;
+}
+.stretch {
+	width:100%;
+}
+#texture {
+  width: 880px;
+	margin:0 auto;
+  margin-top: 22px;
+  background: url('texture.png');
+  padding: 40px;
+  padding-bottom: 0;
+}
+#texture-footer {
+  width: 960px;
+  height: 120px;
+  margin: 0 auto;
+  background: url('texture-footer.png');
+}
+
+
+
+/* ======= */
+/* Content */
+/* ======= */
+.slideshow {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0px;
+  margin-bottom: 10px;
+}
+.slideshow img {
+  padding: 0 2px;
+  display: inline-block;
+}
+#content {
+  padding: 0 30px;
+  padding-top: 20px;
+}
+.post .date,
+.post .info { 
+  display: none; 
+}
+.post .content p:last-child {
+  margin-bottom: 0 !important;
+}
+img.floating-left {
+  float: left;
+}
+img.floating-right {
+  float: right;
+}
+img.faded {
+  opacity: 0.2;
+}
+img.bordered {
+  margin: 8px;
+  padding: 6px;
+  border: 1px solid #999;
+  background: #fff;
+}
+.nav {
+  border: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+}
+.nav li {
+  margin-right: 4px;
+  font-size: 14px;
+}
+
+
