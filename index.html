@@ -5,6 +5,7 @@
   <title>Yoga With Laura - South France Yoga Retreat - 2012</title>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="includes/bootstrap.js"></script>
+  <script type="text/javascript" src="includes/bootstrap-modal.js"></script>
   <script type="text/javascript" src="includes/jquery.jcarousel.js"></script>
     
   <link rel="stylesheet" href="includes/bootstrap.css">
@@ -21,6 +22,15 @@
           buttonPrevHTML: '<div>‹</div>',
           buttonNextHTML: '<div>›</div>',
           animation: 900,
+          });
+
+        var modal = $('#myModal');
+        $('#mycarousel li').click(function(e) {
+          var target = $(e.target);
+          var targetImg = target.attr('src');
+          targetImg = targetImg.replace(/s\.jpg/, '.jpg');
+          modal.find('img').attr('src',targetImg);
+          modal.modal();
           });
     });
   </script>
@@ -148,6 +158,16 @@
     </div>
   </div>        <!-- #texture-->
   <div id="texture-footer">
+  </div>
+
+  <div class="modal" id="myModal" style="display:none; position: absolute; width: 800px; height: 680px; max-height: 680px; top: 100px; margin: 0 0 0 -400px;">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">×</a>
+      <h3>Photo Gallery</h3>
+    </div>
+    <div class="modal-body">
+      <img src=""/>
+    </div>
   </div>
 </body>
 </html>

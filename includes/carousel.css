@@ -14,6 +14,8 @@
 .jcarousel-skin-plain .jcarousel-item-horizontal {
 	margin-left: 0;
     margin-right: 4px;
+    cursor: pointer;
+
 }
 .jcarousel-skin-plain .jcarousel-direction-rtl .jcarousel-item-horizontal {
 	margin-left: 10px;
@@ -23,6 +25,7 @@
     background: #fff;
     color: #000;
 }
+
 
 /**
  *  Horizontal Buttons
