@@ -30,21 +30,59 @@
           auto: 4,
           buttonPrevHTML: '<div>‹</div>',
           buttonNextHTML: '<div>›</div>',
-          animation: 900,
+          animation: 900
           });
 
+        // List everything in the carousel
+        var lis = $('.modal-thumbnail');
+        var srcs = [];
+        lis.each(function(i,li) {
+          srcs.push($(li).attr('action'));
+        });
+        // On click, pop up the modal
         var modal = $('#myModal');
-        $('#mycarousel li').click(function(e) {
-          var target = $(e.target);
-          var targetImg = target.attr('src');
-          targetImg = targetImg.replace(/s\.jpg/, '.jpg');
-          modal.find('img').attr('src',targetImg);
+        var modalImg = modal.find('img');
+        lis.click(function(e) {
+          var src = $(e.target).attr('action');
+          modalImg.attr('src',src);
           modal.modal();
-          });
+        });
+        // On click 'next', switch to the next photo
+        $('.next-photo').click(function(e) {
+          e.preventDefault();
+          var i = $.inArray( modalImg.attr('src'),srcs );
+          if (i>=0) {
+            i = (i+1) % srcs.length;
+            modalImg.attr('src', srcs[i]);
+          }
+        });
+        // On click 'previous', switch to the previous photo
+        $('.previous-photo').click(function(e) {
+          e.preventDefault();
+          var i = $.inArray( modalImg.attr('src'),srcs );
+          if (i>=0) {
+            i = (srcs.length + i - 1) % srcs.length;
+            modalImg.attr('src', srcs[i]);
+          }
+        });
         $(window).hashchange();
     });
     
   </script>
+  <!-- Google analytics code :: begin -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32527458-1']);
+    _gaq.push(['_setDomainName', 'southfranceyogaretreat.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <!-- end :: Google analytics code -->
 </head>
 <body>
   <div id="background">
@@ -59,17 +97,17 @@
       </div>
       <div class="slideshow">
         <ul id="mycarousel" class="jcarousel-skin-plain">
-          <li><img src="slideshow/1s.jpg"/></li>
-          <li><img src="slideshow/2s.jpg"/></li>
-          <li><img src="slideshow/3s.jpg"/></li>
-          <li><img src="slideshow/4s.jpg"/></li>
-          <li><img src="slideshow/5s.jpg"/></li>
-          <li><img src="slideshow/6s.jpg"/></li>
-          <li><img src="slideshow/7s.jpg"/></li>
-          <li><img src="slideshow/8s.jpg"/></li>
-          <li><img src="slideshow/9s.jpg"/></li>
-          <li><img src="slideshow/10s.jpg"/></li>
-          <li><img src="slideshow/11s.jpg"/></li>
+          <li><img class="modal-thumbnail" action="slideshow/1.jpg" src="slideshow/1s.jpg"/></li>
+          <li><img class="modal-thumbnail" action="slideshow/2.jpg" src="slideshow/2s.jpg"/></li>
+          <li><img class="modal-thumbnail" action="slideshow/3.jpg" src="slideshow/3s.jpg"/></li>
+          <li><img class="modal-thumbnail" action="slideshow/4.jpg" src="slideshow/4s.jpg"/></li>
+          <li><img class="modal-thumbnail" action="slideshow/5.jpg" src="slideshow/5s.jpg"/></li>
+          <li><img class="modal-thumbnail" action="slideshow/6.jpg" src="slideshow/6s.jpg"/></li>
+          <li><img class="modal-thumbnail" action="slideshow/7.jpg" src="slideshow/7s.jpg"/></li>
+          <li><img class="modal-thumbnail" action="slideshow/8.jpg" src="slideshow/8s.jpg"/></li>
+          <li><img class="modal-thumbnail" action="slideshow/9.jpg" src="slideshow/9s.jpg"/></li>
+          <li><img class="modal-thumbnail" action="slideshow/10.jpg" src="slideshow/10s.jpg"/></li>
+          <li><img class="modal-thumnbail" action="slideshow/11.jpg" src="slideshow/11s.jpg"/></li>
         </ul>
       </div>
     </div>
@@ -175,13 +213,25 @@
   <div id="texture-footer">
   </div>
 
-  <div class="modal" id="myModal" style="display:none; position: absolute; width: 800px; height: 680px; max-height: 680px; top: 100px; margin: 0 0 0 -400px;">
+  <div class="modal" id="myModal" style="display:none; position: absolute; width: 800px; height: 730px; max-height: 724px; top: 40px; margin: 0 0 0 -400px;">
     <div class="modal-header">
       <a class="close" data-dismiss="modal">×</a>
       <h3>Photo Gallery</h3>
     </div>
     <div class="modal-body">
-      <img src=""/>
+      <a href="#" class="next-photo" title="Next photo &raquo;">
+        <img src=""/>
+      </a>
+    </div>
+    <div class="modal-footer">
+      <table style="width: 760px; margin: 0 auto;"><tr>
+        <td>
+          <a href="#" class="previous-photo">&laquo; Previous Photo</a>
+        </td>
+        <td style="text-align: right;">
+          <a href="#" class="next-photo">Next Photo &raquo;</a>
+        </td>
+      </tr></table>
     </div>
   </div>
 </body>
